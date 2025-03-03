@@ -1,0 +1,43 @@
+@use '_variables';
+
+.main-section-title {
+  position: absolute;
+  top: 166px;
+  left: 78px;
+  width: 353px;
+  height: 138px;
+
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: variables.$title-color;
+
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+@media (max-width: 1024px) {
+  .main-section-title {
+    font-size: 30px;
+    width: 200px;
+
+    left: 20px;
+    top: 59px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section-title {
+    font-size: 20px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 357px) {
+  .main-section-title {
+    height: 48px;
+    width: 123px;
+  }
+}

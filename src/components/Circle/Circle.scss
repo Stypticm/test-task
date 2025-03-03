@@ -1,0 +1,121 @@
+@use '../styles/_variables';
+
+.circle-container {
+  position: absolute;
+  top: 215px;
+  left: 772px;
+  transform: translate(-50%, 0);
+
+  width: 530px;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid variables.$line-color;
+    position: absolute;
+  }
+}
+
+.nameOfCategory {
+  display: none;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: variables.$point-color;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.3s ease, width 0.3s ease,
+    height 0.3s ease, background-color 0.3s ease,
+    border 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    border: 0.1px solid variables.$point-color;
+    width: 50px;
+    height: 50px;
+  }
+
+  &.active {
+    background-color: #fff;
+    border: 0.1px solid variables.$point-color;
+    width: 50px;
+    height: 50px;
+    animation-duration: 0.3s;
+  }
+
+  .index-label {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: 11;
+  }
+
+  .index-name {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 11;
+    color: #42567a;
+  }
+}
+
+@media (max-width: 1440px) {
+  .circle-container {
+    display: none;
+  }
+
+  .point {
+    display: none;
+  }
+  .nameOfCategory {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nameOfCategory {
+    display: block;
+    position: absolute;
+
+    font-size: 25px;
+    width: 200px;
+
+    left: 20px;
+    top: 259px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nameOfCategory {
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+  }
+}
