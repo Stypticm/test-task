@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'testTask', // измените имя
+      name: 'testTask', // change this to a unique name
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/components/App',
